@@ -12,6 +12,7 @@ import { FloorService } from "../../services/floor.service";
 import { DrawingService } from "../../services/drawing.service";
 import { AppService } from "../../app.service";
 import * as _ from "../../helpers";
+// import { enableFloorInteractions, enableUndoHotkey } from "../../helpers";
 import { Canvas } from "fabric/fabric-impl";
 
 const {
@@ -217,7 +218,7 @@ export class ViewComponent implements OnInit, AfterViewInit {
 
   onDeleteFloor(floor: fabric.Object) {
     this.view.remove(floor);
-    this.floorService.removeFloor(floor);
+    // this.floorService.removeFloor(floor);
     this.floorService.setSelectedFloor(null);
     this.view.requestRenderAll();
   }
@@ -583,9 +584,14 @@ export class ViewComponent implements OnInit, AfterViewInit {
    */
   setCanvasView() {
     const canvas = new fabric.Canvas(this.canvasElement.nativeElement);
+
     canvas.setWidth(RL_VIEW_WIDTH * RL_FOOT);
     canvas.setHeight(RL_VIEW_HEIGHT * RL_FOOT);
     this.view = canvas;
+
+    // Attach global interactions and undo once
+    // enableFloorInteractions(canvas);
+    // enableUndoHotkey(canvas);
   }
   /**********************************************************************************************************
    * draw Rooms defined in Model

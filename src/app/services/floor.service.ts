@@ -16,12 +16,12 @@ export class FloorService {
     this.floors.push(floor);
   }
 
-  removeFloor(floor: fabric.Object) {
-    const index = this.floors.indexOf(floor);
-    if (index > -1) {
-      this.floors.splice(index, 1);
-    }
-  }
+  // removeFloor(floor: fabric.Object) {
+  //   const index = this.floors.indexOf(floor);
+  //   if (index > -1) {
+  //     this.floors.splice(index, 1);
+  //   }
+  // }
 
   setSelectedFloor(floor: fabric.Object | null) {
     this.selectedFloor.next(floor);

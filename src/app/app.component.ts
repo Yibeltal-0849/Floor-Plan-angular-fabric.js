@@ -69,11 +69,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(public app: AppService, private dialog: MatDialog) {}
 
   ngAfterViewInit() {
-    this.canvas = new fabric.Canvas("canvas", {
-      backgroundColor: "#fff",
-      width: 800,
-      height: 600,
-    });
+    this.canvas = new fabric.Canvas("canvas", {});
 
     // expose globally for helpers
     (window as any).canvas = this.canvas;
