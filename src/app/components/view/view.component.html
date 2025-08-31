@@ -1,0 +1,18 @@
+<div class="main-container">
+  <!-- File Upload -->
+  <div class="top-bar">
+    <div>
+      <input type="file" (change)="onFileUpload($event)" />
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button (click)="exportAsJSON()">Export JSON</button>
+      <button (click)="importJSON()">Import JSON</button>
+    </div>
+  </div>
+
+  <!-- Canvas -->
+  <!-- <canvas id="main"></canvas> -->
+  <canvas #canvasElement></canvas>
+</div>
